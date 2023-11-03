@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.t-texto {
+  font-size: 12px;
+  padding: 20px;
+}
+
+$color-texto: white;
+$padding: 10px;
+$color-header:#00faf2b7;
+$color-footer: #133270;
+$large: "(min-width: 992px)";
+$medium: "(min-width: 768px) and (max-width: 991px)";
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contenedor-cars {
+  display: grid;
+  border: 1px solid black;
+  grid-template-rows: auto 1fr 7fr;
+  grid-template-areas:
+    "menu"
+    "busqueda"
+    "seccion-principal"
+    "pie-de-pagina";
+
+  @media #{$medium} {
+    min-height: 95vh;
+    grid-template-areas:
+      "menu busqueda"
+      "menu seccion-principal"
+      "pie-de-pagina seccion-principal";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 10rem 2fr;
+  }
+  @media #{$large} {
+    min-height: 100vh;
+    grid-template-areas:
+      "menu menu "
+      "busqueda seccion-principal"
+      "pie-de-pagina pie-de-pagina";
+    grid-template-rows: auto 10fr auto;
+    grid-template-columns: 12rem 1fr;
+  }
+}
+
+.navbarheader {
+  padding: $padding;
+  grid-area: menu;
+  color: $color-texto;
+  background-image: linear-gradient(to right top, #ff9fff, #c9b4ff, #88c6ff, #46d3ff, #28daff, #1ed7ff, #12d4ff, #00d1ff, #2cc2ff, #83acff, #cb8cff, #ff63d1);
+  .header-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+  }
+  
+  .items-car {
+    @extend .flex-horizontal;
+  
+  }
+  .items-nav {
+    display: none;
+  }
+  .items-nav-vertical {
+    display: none;
+  }
+  .items-nav-horizontal {
+    display: none;
+  }
+  @media #{$medium} {
+    .header-foto{
+      display: none;
+    }
+    .items-car {
+      font-size: 12px;
+      padding: 20px;
+      .fa-bars {
+        display: none;
+      }
+    }
+    .items-nav-vertical {
+      font-size: 12px;
+      display: block;
+      height: 20%;
+      padding: 20px;
+      list-style: none;
+
+      li p {
+        margin-bottom: 10px;
+        font-size: 15;
+        .color-tex {
+          color: #817c7c;
+        }
+      }
+    }
+  }
+  @media #{$large} {
+    overflow: hidden;
+    .items-nav-vertical {
+      display: none;
+    }
+    .items-car {
+      font-size: 15px;
+      padding: 5px;
+      .fa-bars {
+        display: none;
+      }
+    }
+    .items-nav-horizontal {
+      display: flex;
+      gap: 50px;
+      justify-content: space-around;
+      align-items: center;
+      padding: 14px 16px;
+    }
+  }
+}
+
+.busqueda {
+  padding: $padding;
+  grid-area: busqueda;
+  background-color: #babcbe;
+  height: min-content;
+  .texbuscaqueda {
+    @extend .flex-center;
+  }
+  .search-input {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    margin-right: -5px;
+  }
+
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #0037a1;
+    color: white;
+    cursor: pointer;
+  }
+
+  #search-form {
+    padding-top: -5px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media #{$large} {
+    height: 100%;
+    .search-input {
+      width: 95%;
+      padding: 10px;
+      font-size: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      margin-right: -5px;
+    }
+
+    .search-button {
+      padding: 10px 20px;
+      font-size: 10px;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      background-color: #0037a1;
+      color: $color-texto;
+      cursor: pointer;
+    }
+  }
+}
+
+.main-content {
+  grid-area: seccion-principal;
+  background-color: rgb(255, 255, 255);
+  padding: $padding;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  .contener-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: $padding;
+    border-radius: 5px;
+
+    .contenedor-img {
+      border: 1px solid rgb(231, 216, 216);
+      border-radius: 3px;
+
+      .card_body {
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 1;
+        }
+
+        &:hover {
+          img {
+            transform: translateX(60%);
+            opacity: 0.1;
+          }
+          background-color: rgb(60, 143, 168);
+        }
+      }
+
+      .card-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        padding: $padding;
+
+        .card_boton {
+          height: 30px;
+          padding: 10px 20px;
+          font-size: 12px;
+          border-radius: 5px;
+          background-color: #0037a1;
+          color: rgb(255, 255, 255);
+          cursor: pointer;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  @media #{$medium} {
+    .contener-cards {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 30px;
+      padding: $padding;
+      border-radius: 5px;
+    }
+  }
+
+  @media #{$large} {
+    .contener-cards {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 30px;
+      padding: $padding;
+      border-radius: 5px;
+    }
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-bottom: 20px;
+  height: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+
+  .page-link {
+    height: 20px;
+    padding: 8px 16px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .page-link:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+.pie-pagina {
+  padding: 5px;
+  grid-area: pie-de-pagina;
+  background: $color-footer;
+  color: $color-texto;
+  @extend .flex-center;
+  text-align: center;
+  .item-redes {
+    @extend .flex-center;
+    gap: 5px;
+  }
+}
