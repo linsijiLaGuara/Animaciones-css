@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
 .flex-center, .pie-pagina .item-redes, .pie-pagina, .busqueda .texbuscaqueda {
   display: flex;
@@ -48,6 +49,8 @@ body {
   grid-area: menu;
   color: white;
   background-image: linear-gradient(to right top, #ff9fff, #c9b4ff, #88c6ff, #46d3ff, #28daff, #1ed7ff, #12d4ff, #00d1ff, #2cc2ff, #83acff, #cb8cff, #ff63d1);
+  background-size: 200% auto; /* Define el tamaño del fondo para la animación */
+  animation: ripple 20s infinite linear; /* Aplica la animación de "ola" al fondo */
 }
 .navbarheader .header-foto img {
   width: 100%;
@@ -113,6 +116,14 @@ body {
   }
 }
 
+@keyframes ripple {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
 .busqueda {
   padding: 10px;
   grid-area: busqueda;
