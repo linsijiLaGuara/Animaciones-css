@@ -100,7 +100,7 @@ body {
     #00e4ff
   );
 
-  .header-foto img {
+  .header-foto .header-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -108,7 +108,7 @@ body {
 
   .items-logo {
     @extend .flex-horizontal;
-    img {
+    .logo-img {
       width: 13%;
       height: 5%;
       margin-left: 10px;
@@ -140,6 +140,7 @@ body {
       }
       img {
         width: 100%;
+
         height: 80%;
         object-fit: contain;
         margin: 0 auto;
@@ -266,7 +267,7 @@ body {
   justify-content: center;
   gap: 10px;
 
-  .contenedor-store {
+  .contenedor-producto {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -284,6 +285,7 @@ body {
 
         img {
           width: 100%;
+          max-width: 300px;
           height: 100%;
           object-fit: cover;
         }
@@ -319,7 +321,7 @@ body {
     }
   }
   @media #{$medium} {
-    .contener-cards {
+    .contenedor-producto {
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -330,7 +332,7 @@ body {
   }
 
   @media #{$large} {
-    .contener-cards {
+    .contenedor-producto {
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;

@@ -62,13 +62,13 @@ body {
   color: white;
   background-image: linear-gradient(to right top, #16ffff, #32f3ff, #7ae4ff, #b2d3ff, #d7c3ff, #d8c1ff, #d9beff, #dabcff, #b5c7ff, #85d3ff, #4cddff, #00e4ff);
 }
-.navbarheader .header-foto img {
+.navbarheader .header-foto .header-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.navbarheader .items-logo img {
+.navbarheader .items-logo .logo-img {
   width: 13%;
   height: 5%;
   margin-left: 10px;
@@ -200,7 +200,7 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.main-content .contenedor-store {
+.main-content .contenedor-producto {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -208,28 +208,29 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
-.main-content .contenedor-store .contenedor-img {
+.main-content .contenedor-producto .contenedor-img {
   border: 1px solid rgb(231, 216, 216);
   border-radius: 3px;
 }
-.main-content .contenedor-store .contenedor-img .card_body {
+.main-content .contenedor-producto .contenedor-img .card_body {
   overflow: hidden;
   transition: all 1s ease-in-out;
 }
-.main-content .contenedor-store .contenedor-img .card_body img {
+.main-content .contenedor-producto .contenedor-img .card_body img {
   width: 100%;
+  max-width: 300px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.main-content .contenedor-store .contenedor-img .card_body:hover {
+.main-content .contenedor-producto .contenedor-img .card_body:hover {
   background-color: rgb(60, 143, 168);
 }
-.main-content .contenedor-store .contenedor-img .card_body:hover img {
+.main-content .contenedor-producto .contenedor-img .card_body:hover img {
   transform: translateX(60%);
   opacity: 0.1;
 }
-.main-content .contenedor-store .contenedor-img .card-texto {
+.main-content .contenedor-producto .contenedor-img .card-texto {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -237,7 +238,7 @@ body {
   color: black;
   padding: 10px;
 }
-.main-content .contenedor-store .contenedor-img .card-texto .card_boton {
+.main-content .contenedor-producto .contenedor-img .card-texto .card_boton {
   height: 30px;
   padding: 10px 20px;
   font-size: 12px;
@@ -248,7 +249,7 @@ body {
   margin-top: 10px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .main-content .contener-cards {
+  .main-content .contenedor-producto {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -258,7 +259,7 @@ body {
   }
 }
 @media (min-width: 992px) {
-  .main-content .contener-cards {
+  .main-content .contenedor-producto {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
