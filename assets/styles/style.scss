@@ -15,7 +15,7 @@
   padding: 20px;
 }
 .animacion {
-  animation: cambiarFondo 3s linear infinite alternate-reverse;
+  animation: cambiarFondo 2s linear infinite alternate-reverse;
   background-size: 200% auto;
 }
 $color-texto: white;
@@ -105,16 +105,28 @@ body {
       height: 5%;
       margin-left: 10px;
     }
-  }
 
-  .items-nav {
-    display: none;
+    .icon {
+      i {
+        font-size: 25px;
+      }
+      &:hover {
+        i {
+          animation: cambiarFondo 2s linear infinite alternate-reverse;
+          background-size: 200% auto;
+          color: #0037a1;
+        }
+      }
+    }
   }
 
   .items-nav-vertical {
     display: none;
   }
 
+  .items-nav {
+    display: none;
+  }
   .items-nav-horizontal {
     display: none;
   }
@@ -145,6 +157,7 @@ body {
       height: 20%;
       padding: 10px;
       list-style: none;
+
       li p {
         margin-bottom: 10px;
         font-size: 20;
@@ -177,6 +190,7 @@ body {
       justify-content: space-around;
       align-items: center;
       padding: 14px 16px;
+      transform: translateX(100%);
     }
   }
 }
@@ -304,10 +318,17 @@ body {
           padding: 10px 20px;
           font-size: 12px;
           border-radius: 5px;
-          background-color: #0037a1;
+          background-color: #08ddff;
           color: rgb(255, 255, 255);
           cursor: pointer;
           margin-top: 10px;
+        }
+
+        &:hover {
+          .card_boton {
+            background-color: darkblue;
+            opacity: 0.1;
+          }
         }
       }
     }
@@ -363,6 +384,13 @@ body {
   .item-redes {
     @extend .flex-center;
     gap: 5px;
+  }
+  &:hover {
+    a {
+     color: #010b1f;
+      opacity: 0.1;
+      font-size: 25px;
+    }
   }
 }
 @keyframes cambiarFondo {

@@ -17,7 +17,7 @@
 }
 
 .animacion, .pie-pagina, .busqueda, .navbarheader {
-  animation: cambiarFondo 3s linear infinite alternate-reverse;
+  animation: cambiarFondo 2s linear infinite alternate-reverse;
   background-size: 200% auto;
 }
 
@@ -65,10 +65,18 @@ body {
   height: 5%;
   margin-left: 10px;
 }
-.navbarheader .items-nav {
-  display: none;
+.navbarheader .items-logo .icon i {
+  font-size: 25px;
+}
+.navbarheader .items-logo .icon:hover i {
+  animation: cambiarFondo 2s linear infinite alternate-reverse;
+  background-size: 200% auto;
+  color: #0037a1;
 }
 .navbarheader .items-nav-vertical {
+  display: none;
+}
+.navbarheader .items-nav {
   display: none;
 }
 .navbarheader .items-nav-horizontal {
@@ -128,6 +136,7 @@ body {
     justify-content: space-around;
     align-items: center;
     padding: 14px 16px;
+    transform: translateX(100%);
   }
 }
 
@@ -236,10 +245,14 @@ body {
   padding: 10px 20px;
   font-size: 12px;
   border-radius: 5px;
-  background-color: #0037a1;
+  background-color: #08ddff;
   color: rgb(255, 255, 255);
   cursor: pointer;
   margin-top: 10px;
+}
+.main-content .contenedor-producto .contenedor-img .card-texto:hover .card_boton {
+  background-color: darkblue;
+  opacity: 0.1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-content .contenedor-producto {
@@ -286,6 +299,11 @@ body {
 }
 .pie-pagina .item-redes {
   gap: 5px;
+}
+.pie-pagina:hover a {
+  color: #010b1f;
+  opacity: 0.1;
+  font-size: 25px;
 }
 
 @keyframes cambiarFondo {
